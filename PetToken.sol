@@ -14,4 +14,8 @@ contract PetToken is ERC20, Ownable {
     function burnPetToken(uint256 amount) external {
         _burn(msg.sender, amount);
     }
+
+    function transferPetToken(address recipient, uint256 amount) external returns (bool) {
+        return transfer(recipient, amount);
+    }
 }
